@@ -4,21 +4,17 @@ const ctx = canvas.getContext("2d")
 canvas.width = window.innerWidth
 canvas.height = window.innerHeight
 
-const ROWS = 150
-const COLS = 300
-const SPACING = 12
+const SPACING = 8
+const COLS = Math.floor(window.innerWidth / SPACING)
+const ROWS = Math.floor(window.innerHeight / SPACING)
 
-const THICKNESS = 3000
+const THICKNESS = 5000
 const DRAG = 0.95
-const EASE = 0.25
+const EASE = 0.15
 
 let particles = []
 
-let mouse = {
-x:0,
-y:0,
-active:false
-}
+let mouse = {x:0,y:0}
 
 for(let i=0;i<ROWS*COLS;i++){
 
@@ -41,7 +37,6 @@ window.addEventListener("mousemove",(e)=>{
 
 mouse.x = e.clientX
 mouse.y = e.clientY
-mouse.active = true
 
 })
 
@@ -72,8 +67,8 @@ p.y += (p.vy *= DRAG) + (p.oy - p.y) * EASE
 
 p.alpha *= 0.96
 
-ctx.fillStyle = "rgba(255,255,255,"+p.alpha+")"
-ctx.fillRect(p.x,p.y,1,1)
+ctx.fillStyle = "rgba(56,189,248,"+(p.alpha+0.2)+")"
+ctx.fillRect(p.x,p.y,2,2)
 
 })
 
