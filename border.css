@@ -8,11 +8,24 @@
 }
 
 /* =========================
+   🏷 Board 제목 (상단 고정)
+========================= */
+.board-title{
+  position:fixed;
+  top:90px; /* navbar 아래 */
+  left:50%;
+  transform:translateX(-50%);
+  z-index:1000;
+
+  font-size:28px;
+}
+
+/* =========================
    ✍ 작성창 (완전 고정)
 ========================= */
 .board-write{
   position:fixed;
-  top:90px;
+  top:160px; /* 제목 아래 */
   left:50%;
   transform:translateX(-50%);
   width:800px;
@@ -28,7 +41,7 @@
 
 /* 게시글 영역 밀기 */
 #postList{
-  margin-top:180px;
+  margin-top:220px;
 }
 
 /* =========================
@@ -201,4 +214,8 @@
   .board-write{
     width:90%;
   }
+}
+
+#postList{
+  margin-top: 280px; /* 작성창 높이만큼 더 내려줌 */
 }
