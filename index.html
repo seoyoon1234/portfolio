@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Seoyoon Portfolio</title>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="border.css">
 </head>
 
 <body>
@@ -17,7 +18,7 @@
 <li><a href="#hero">Home</a></li>
 <li><a href="#about">About</a></li>
 <li><a href="#skills">Skills</a></li>
-<li><a href="#projects">Projects</a></li>
+<li><a href="#border">border</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
 </nav>
@@ -43,15 +44,41 @@
 </div>
 
 </section>
+<section id="board" class="section reveal page4">
+  <h2 class="gradient">Board</h2>
 
-<section id="projects" class="section reveal page4">
-<h2>Projects</h2>
+  <div class="board-container">
 
-<div class="project">
-뉴스 API 검색 프로젝트
+    <!-- 작성 -->
+    <div class="board-write">
+      <input type="text" id="title" placeholder="제목">
+      <textarea id="content" placeholder="내용"></textarea>
+      <button onclick="addPost()">작성</button>
+    </div>
+
+    <!-- 게시글 -->
+    <div id="postList"></div>
+
+    <!-- 페이지 -->
+    <div class="pagination">
+      <button onclick="prevPage()">이전</button>
+      <span id="pageInfo"></span>
+      <button onclick="nextPage()">다음</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- 모달 -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">✖</span>
+    <h3 id="modalTitle"></h3>
+    <p id="modalContent"></p>
+  </div>
 </div>
 
-</section>
+
 
 <section id="contact" class="section reveal page5">
 <h2>Contact</h2>
@@ -60,6 +87,7 @@
 
 <script src="particles.js"></script>
 <script src="script.js"></script>
+<script src="border.js"></script>
 
 </body>
 </html>
