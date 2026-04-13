@@ -32,7 +32,7 @@ reveals.forEach(el => observer.observe(el));
    2. API 서버 통신 로직
 ================================== */
 // 🚨 중요: 여기에 서윤님의 실제 서버 IP나 도메인을 적어주세요! (예: http://123.45.67.89:3000/api/posts)
-const API_URL = 'http://내서버의아이피주소:3000/api/posts'; 
+const API_URL = 'https://portfolio-inky-five-73.vercel.app/#board'; 
 let currentPostId = null; 
 
 document.addEventListener('DOMContentLoaded', fetchPosts);
